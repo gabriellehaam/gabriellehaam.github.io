@@ -12,7 +12,7 @@ layout: default
 
 
 {% for image in images %}
-  {% link _photo/chalk/L1041093.jpg %}
+  {% link {{ image.path }} %}
   <img src="/photo/chalk/L1041093.jpg">
   {{ image | inspect }}
 {% endfor %}
