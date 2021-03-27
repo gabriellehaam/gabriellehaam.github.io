@@ -1,19 +1,19 @@
 ---
 layout: default
 ---
-{{page.collection}}
 
 {% assign c = site.collections | where: "label", page.collection | first %}
-collections
-{{ site.collections | inspect }}
-cfiles
-{{ c | inspect }}
-pagebasename
-{{ page.basename }}
-{% assign images = c.files %}
+{% assign series = page.name | split "." | first %}
+{% assign images = c.files | where_exp: "image", "image.path contains series" %}
 
 {% for image in images %}
   {{ image.path }}
 {% endfor %}
+
+
+<!-- {% for art in site.artworks %}
+    <img src="{{ art.path }}">
+    {{ art.path }}
+{% endfor %} -->
 
 {{ content }}
