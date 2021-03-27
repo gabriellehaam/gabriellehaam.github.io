@@ -3,9 +3,10 @@ layout: default
 ---
 {{page.collection}}
 
-{% assign c = site.collections | find: "label", "photo" %}
+{% assign c = site.collections | where: "label", "photo" | first %}
+collections
+{{ site.collections | inspect }}
 cfiles
-{{ c.files | inspect }}
 {{ c | inspect }}
 pagebasename
 {{ page.basename }}
