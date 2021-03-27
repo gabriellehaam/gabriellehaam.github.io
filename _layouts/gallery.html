@@ -4,7 +4,10 @@ layout: default
 {{page.collection}}
 
 {% assign c = site.collections | find_exp: "collection", "collection.label == page.collection" %}
+{{ c.files | inspect }}
+{{ page.basename }}
 {% assign images = c.files %}
+
 {% for image in images %}
   {{ image.path }}
 {% endfor %}
