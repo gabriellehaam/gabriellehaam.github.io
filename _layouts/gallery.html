@@ -1,7 +1,9 @@
 ---
 layout: default
 ---
-
-A GALLERY
+{% assign images = site.static_files | where_exp: "image", "image.path contains page.basename" %}
+{% for image in images %}
+  {{ image.path }}
+{% endfor %}
 
 {{ content }}
