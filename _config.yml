@@ -1,7 +1,6 @@
 defaults:
-  -
-    scope:
-      path: "collections" # an empty string here means all files in the project
+  - scope:
+      path: "" # an empty string here means all files in the project
     values:
       layout: gallery
 collections_dir: collections
