@@ -3,10 +3,6 @@ layout: default
 title: gabrielle haam
 ---
 <h1>{{ "gabrielle haam" | downcase }}</h1>
-{% for document in site.documents %}
-  layout  {{ document.layout }}
-  name  {{ document.name }}
-  collection  {{ document.collection }}
-{% endfor %}
+{{ site.documents | inspect }}
 collections
 {{ site.collections | inspect }}
