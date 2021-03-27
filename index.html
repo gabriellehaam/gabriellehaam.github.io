@@ -3,4 +3,7 @@ layout: default
 title: gabrielle haam
 ---
 <h1>{{ "gabrielle haam" | downcase }}</h1>
-{{ site.collections || array_to_sentence_string }}
+{% for document in site.documents %}
+  {{ document.url }}
+  {{ document.collection }}
+{% endfor %}
