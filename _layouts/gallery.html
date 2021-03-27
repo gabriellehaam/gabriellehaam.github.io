@@ -4,11 +4,10 @@ layout: default
 ---
 
 {% assign c = site.collections | where: "label", page.collection | first %}
-{% assign series = page.path | split: "." | first %}
-{% assign images = c.files | where_exp: "image", "image.path contains series" %}
+{% assign series_path = page.path | split: "." | first %}
+{% assign images = c.files | where_exp: "image", "image.path contains series_path" %}
 
-
-
+{% assign series = series_path | split: "/" | last %}
 
 
 {{ page | inspect }}
