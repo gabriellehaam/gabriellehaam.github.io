@@ -6,7 +6,8 @@ layout: default
 {% assign series = page.path | split: "." | first %}
 {% assign images = c.files | where_exp: "image", "image.path contains series" %}
 {% for image in images %}
-  <img src="{{ link image.path }}">
+  {% assign imgurl = link {{ image.path }} %}
+  <img src="{{ imgurl }}">
   {{ image | inspect }}
 {% endfor %}
 
