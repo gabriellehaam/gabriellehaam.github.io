@@ -9,13 +9,9 @@ series
 {% assign images = c.files | where_exp: "image", "image.path contains series" %}
 
 {% for image in images %}
+  <img src="{{ image.path }}">
   {{ image.path }}
 {% endfor %}
 
-
-<!-- {% for art in site.artworks %}
-    <img src="{{ art.path }}">
-    {{ art.path }}
-{% endfor %} -->
 
 {{ content }}
