@@ -3,7 +3,7 @@ layout: default
 ---
 {{page.collection}}
 
-{% assign c = site.collections | where: "label", "photo" | first %}
+{% assign c = site.collections | find_exp:"item", "item.label == page.collection" %}
 collections
 {{ site.collections | inspect }}
 cfiles
