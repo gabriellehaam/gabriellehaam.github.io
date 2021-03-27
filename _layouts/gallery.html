@@ -3,8 +3,18 @@ layout: default
 ---
 
 {% assign c = site.collections | where: "label", page.collection | first %}
+{% assign series = page.path | split "." | first %}
+{{ c.files | inspect }}
+{{ series }}
+{% assign images = c.files | where_exp: "image", "image.path contains series" %}
+
+{% for image in images %}
+  <img src="{{ image.path }}">
+  {{ image.path }}
+{% endfor %}
 {{ page | inspect }} 
 
 
 
+_photo/chalk.md
 {{ content }}
