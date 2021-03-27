@@ -2,7 +2,7 @@ defaults:
   - scope:
       path: "" # an empty string here means all files in the project
     values:
-      layout: gallery
+      layout: "gallery"
 collections_dir: collections
 collections:
   photo:
