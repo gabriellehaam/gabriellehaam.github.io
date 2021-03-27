@@ -5,3 +5,6 @@ defaults:
     values:
       layout: "gallery"
 collections_dir: "collections"
+collections:
+  photo:
+    output: true
