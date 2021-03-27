@@ -11,6 +11,8 @@ layout: default
 
 
 {% for image in images %}
+  {% assign imgpth = image.path %}
+  {% link {{imgpth}} %}
   {% link _photo/chalk/L1041093.jpg %}
   <img src="">
   {{ image | inspect }}
