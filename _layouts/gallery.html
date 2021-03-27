@@ -3,9 +3,7 @@ layout: default
 ---
 
 {% assign c = site.collections | where: "label", page.collection | first %}
-{% assign series = page.name | split "." | first %}
-{{ series }}
-series
+{{ page | inspect }} 
 
 
 
