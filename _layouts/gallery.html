@@ -1,5 +1,6 @@
 ---
 layout: default
+
 ---
 
 {% assign c = site.collections | where: "label", page.collection | first %}
@@ -11,10 +12,8 @@ layout: default
 
 
 {% for image in images %}
-  {% assign imgpth = image.path %}
-  {% link {{imgpth}} %}
   {% link _photo/chalk/L1041093.jpg %}
-  <img src="">
+  <img src="/photo/chalk/L1041093.jpg">
   {{ image | inspect }}
 {% endfor %}
 
