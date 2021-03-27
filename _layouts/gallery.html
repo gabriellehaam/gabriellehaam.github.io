@@ -6,6 +6,7 @@ layout: default
 {% assign c = site.collections | find_exp: "collection", "collection.label == page.collection" %}
 cfiles
 {{ c.files | inspect }}
+{{ c | inspect }}
 pagebasename
 {{ page.basename }}
 {% assign images = c.files %}
