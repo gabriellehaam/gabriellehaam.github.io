@@ -3,8 +3,8 @@ defaults:
     scope:
       path: "collections" # an empty string here means all files in the project
     values:
-      layout: "gallery"
-collections_dir: "collections"
+      layout: gallery
+collections_dir: collections
 collections:
   photo:
     output: true
