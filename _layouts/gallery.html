@@ -5,9 +5,14 @@ layout: default
 {% assign c = site.collections | where: "label", page.collection | first %}
 {% assign series = page.path | split: "." | first %}
 {% assign images = c.files | where_exp: "image", "image.path contains series" %}
+
+
+
+
+
 {% for image in images %}
-  {% assign imgurl = link {{ image.path }} %}
-  <img src="{{ imgurl }}">
+  {% link {{image.path}} %}
+  <img src="{% link {{image.path}} %}">
   {{ image | inspect }}
 {% endfor %}
 
