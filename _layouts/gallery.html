@@ -3,7 +3,7 @@ layout: default
 ---
 
 {% assign c = site.collections | where: "label", page.collection | first %}
-{% assign series = page.path | split "." | first %}
+{% assign series = page.path | split: "." | first %}
 {{ c.files | inspect }}
 {{ series }}
 {% assign images = c.files | where_exp: "image", "image.path contains series" %}
@@ -12,6 +12,9 @@ layout: default
   <img src="{{ image.path }}">
   {{ image.path }}
 {% endfor %}
+
+
+
 {{ page | inspect }} 
 
 
