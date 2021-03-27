@@ -1,5 +1,1 @@
----
-layout: gallery
----
-
 chalk series
