@@ -3,8 +3,11 @@ layout: default
 ---
 {{page.collection}}
 
-{% assign collection = site.collections | find_exp: "collection", "collection.label == page.collection" %}
-{% assign images = collection.files %}
+{{ site.collections | find_exp: "collection", "collection.label == page.collection" }}
+
+
+
+{% assign images = currcollection.files %}
 {% for image in images %}
   {{ image.path }}
   {{ image.content }}
