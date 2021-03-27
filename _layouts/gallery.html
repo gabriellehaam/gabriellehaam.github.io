@@ -1,7 +1,7 @@
 ---
 layout: default
 ---
-{% assign images = site.collections[page.collection].files | where_exp: "image", "image.path contains page.basename" %}
+{% assign images = site.collections[page.collection].files %}
 {% for image in images %}
   {{ image.path }}
   {{ image.content }}
