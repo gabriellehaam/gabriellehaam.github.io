@@ -6,12 +6,7 @@ layout: default
 {% assign series = page.name | split "." | first %}
 {{ series }}
 series
-{% assign images = c.files | where_exp: "image", "image.path contains series" %}
 
-{% for image in images %}
-  <img src="{{ image.path }}">
-  {{ image.path }}
-{% endfor %}
 
 
 {{ content }}
