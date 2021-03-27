@@ -1,4 +1,2 @@
----
-layout: gallery
----
+
 chalk series
