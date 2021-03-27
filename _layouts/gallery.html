@@ -1,0 +1,10 @@
+---
+layout: default
+---
+{% assign series = page.name | split "." | first %}
+{% assign images = site.collections[page.collection].static_files | where_exp: "image", "image.path contains series" %}
+{% for image in images %}
+  {{ image.path }}
+{% endfor %}
+
+{{ content }}
