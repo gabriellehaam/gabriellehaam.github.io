@@ -8,6 +8,10 @@ title: photo / chalk
     height: auto;
     padding-bottom: 50px;
   }
+  .gallery {
+    display: flex;
+    justify-content: center;
+  }
 </style>
 {% assign c = site.collections | where: "label", page.collection | first %}
 {% assign series_path = page.path | split: "." | first %}
@@ -16,9 +20,10 @@ title: photo / chalk
 {% assign series = series_path | split: "/" | last %}
 
 
-{{ page | inspect }}
+<div class=gallery>
 {% for image in images %}
   <img class=gallery_img src="{{ series }}/{{ image.name }}">
 {% endfor %}
+</div>
 
 {{ content }}
