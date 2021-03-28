@@ -1,3 +1,4 @@
 ---
+title: chalk / photo
 ---
-chalk series
+
