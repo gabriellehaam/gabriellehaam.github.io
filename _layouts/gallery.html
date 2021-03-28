@@ -10,11 +10,17 @@ layout: default
     height: auto;
     padding: 50px;
   }
-  .gallery {
+  #gallery {
     display: flex;
     justify-content: center;
   }
+  gallery.addEventListener('wheel', (ev) => {
+  if (!ev.shiftKey) {
+    ev.preventDefault();
+    gallery.scrollLeft += ev.deltaY + ev.deltaX;
+  }
 </style>
+<body>
 {% assign c = site.collections | where: "label", page.collection | first %}
 {% assign series_path = page.path | split: "." | first %}
 {% assign images = c.files | where_exp: "image", "image.path contains series_path" %}
@@ -22,10 +28,13 @@ layout: default
 {% assign series = series_path | split: "/" | last %}
 
 
-<div class=gallery>
+<div id=gallery>
 {% for image in images %}
   <img class=gallery_img src="{{ series }}/{{ image.name }}">
 {% endfor %}
 </div>
+  
+
+</body>
 
 {{ content }}
