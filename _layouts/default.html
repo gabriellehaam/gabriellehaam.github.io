@@ -10,7 +10,11 @@
       width: 100%;
       background-color: white;
     }  
-  
+    .topbar {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
     
     .header {
       position: sticky;
@@ -83,9 +87,11 @@
     </style>
   </head>
   <body>
+   <div class = "topbar">
     <div class="header">
       <h1> gabrielle haam </h1>
     </div>
+   </div>
     
     
     {{ content }}
