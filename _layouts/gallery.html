@@ -7,8 +7,8 @@ layout: default
   }
   .gallery_img {
     max-width: 50%;
-    max-height:30%;
-    height: auto;
+    max-height: 30%;
+/*     height: auto; */
     padding: 50px;
   }
   #gallery {
@@ -21,9 +21,11 @@ layout: default
     overflow-x: auto;
     align-items: center;
     margin-left: 0;
-    max-height:50%;
   }
-        
+/*   .gallery_div {
+    max-height: 50%;
+  }
+         */
 
 </style>
 
@@ -41,12 +43,13 @@ layout: default
 
 {% assign series = series_path | split: "/" | last %}
 
-
+<!-- <div class= gallery_div> -->
 <div id=gallery>
 {% for image in images %}
   <img class=gallery_img src="{{ series }}/{{ image.name }}">
 {% endfor %}
 </div>
+<!-- </div> -->
   
 
 
