@@ -22,10 +22,10 @@ layout: default
     align-items: center;
     margin-left: 0;
   }
-/*   .gallery_div {
+  .gallery_div {
     max-height: 50%;
   }
-         */
+        
 
 </style>
 
@@ -43,13 +43,13 @@ layout: default
 
 {% assign series = series_path | split: "/" | last %}
 
-<!-- <div class= gallery_div> -->
+<div class= gallery_div>
 <div id=gallery>
 {% for image in images %}
   <img class=gallery_img src="{{ series }}/{{ image.name }}">
 {% endfor %}
 </div>
-<!-- </div> -->
+</div>
   
 
 
