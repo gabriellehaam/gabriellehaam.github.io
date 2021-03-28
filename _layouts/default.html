@@ -21,7 +21,7 @@
     }
 
     /* The container <div> - needed to position the dropdown content */
-    .dropdown {
+    .dropup {
       position: relative;
       display: inline-block;
     }
@@ -30,10 +30,9 @@
     .dropup-content {
       display: none;
       position: absolute;
-      bottom: 50px;
       background-color: #f1f1f1;
       min-width: 160px;
-      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      bottom: 50px;
       z-index: 1;
     }             
 
@@ -47,20 +46,24 @@
 
 
     /* Change color of dropdown links on hover */
-    .dropdown-content a:hover {background-color: #ddd;}
+    .dropup-content a:hover {background-color: #ddd;}
 
     /* Show the dropdown menu on hover */
-    .dropdown:hover .dropdown-content {display: block;}
+    .dropup:hover .dropup-content {display: block;}
 
     /* Change the background color of the dropdown button when the dropdown content is shown */
-    .dropdown:hover .dropbtn {background-color: #3e8e41;}
+    .dropup:hover .dropbtn {background-color: #3e8e41;}
+      
+    .navbar a:hover, .dropup:hover .dropbtn {
+    background-color: blue;
+    }
     
     </style>
   </head>
   <body>
     {{ content }}
     <div id="footer">
-    <div class="dropdown">
+    <div class="dropup">
     <button class="dropbtn">Dropdown</button>
       <div class="dropup-content">
         <a href="#">Link 1</a>
