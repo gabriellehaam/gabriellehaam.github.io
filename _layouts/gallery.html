@@ -2,9 +2,8 @@
 layout: default
 ---
 <style>
-  html, body {
+  body {
     overscroll-behavior-y: none;
-    overflow: hidden;
   }
   .gallery_img {
     max-width: 50%;
@@ -15,13 +14,15 @@ layout: default
     display: flex;
     justify-content: center;
   }
-  gallery.addEventListener('wheel', (ev) => {
-  if (!ev.shiftKey) {
-    ev.preventDefault();
-    gallery.scrollLeft += ev.deltaY + ev.deltaX;
-  }
+
 </style>
-<body>
+
+gallery.addEventListener('wheel', (ev) => {
+if (!ev.shiftKey) {
+  ev.preventDefault();
+  gallery.scrollLeft += ev.deltaY + ev.deltaX;
+}
+
 {% assign c = site.collections | where: "label", page.collection | first %}
 {% assign series_path = page.path | split: "." | first %}
 {% assign images = c.files | where_exp: "image", "image.path contains series_path" %}
@@ -36,6 +37,6 @@ layout: default
 </div>
   
 
-</body>
+
 
 {{ content }}
