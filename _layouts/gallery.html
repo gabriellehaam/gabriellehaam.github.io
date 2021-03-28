@@ -1,8 +1,13 @@
 ---
 layout: default
-
+title: photo / chalk
 ---
-
+<style>
+  .gallery_img {
+    max-width: 100%;
+    height: auto;
+  }
+</style>
 {% assign c = site.collections | where: "label", page.collection | first %}
 {% assign series_path = page.path | split: "." | first %}
 {% assign images = c.files | where_exp: "image", "image.path contains series_path" %}
@@ -12,7 +17,7 @@ layout: default
 
 {{ page | inspect }}
 {% for image in images %}
-  <img src="{{ series }}/{{ image.name }}">
+  <img class=gallery_img src="{{ series }}/{{ image.name }}">
 {% endfor %}
 
 {{ content }}
