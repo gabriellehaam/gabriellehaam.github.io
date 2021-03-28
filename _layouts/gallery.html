@@ -14,14 +14,17 @@ layout: default
     display: flex;
     justify-content: center;
   }
+        
 
 </style>
 
-gallery.addEventListener('wheel', (ev) => {
-if (!ev.shiftKey) {
-  ev.preventDefault();
-  gallery.scrollLeft += ev.deltaY + ev.deltaX;
-}
+<script>
+  gallery.addEventListener('wheel', (ev) => {
+    if (!ev.shiftKey) {
+      ev.preventDefault();
+      gallery.scrollLeft += ev.deltaY + ev.deltaX;
+  } 
+</script>
 
 {% assign c = site.collections | where: "label", page.collection | first %}
 {% assign series_path = page.path | split: "." | first %}
