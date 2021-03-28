@@ -13,24 +13,17 @@
   
     
     .header {
+      position: fixed;
       width: 100%;
       top: 0;
-      left: 0;
-      
 
      
     }  
      
     .header h1{
-      position: sticky;
-      top: 0;
-      left: 0;
-      position: -webkit-sticky;
-      border:2px solid green;
-      display:inline-block;
       font-family: Arial, Helvetica, sans-serif;
       font-size: 47px;
-/*       text-align: center; */
+      text-align: center;
 
     }  
   
@@ -92,8 +85,9 @@
   <body>
     <div class="header">
       <h1> gabrielle haam </h1>
-      
     </div>
+    
+    
     {{ content }}
     <div id="footer">
     <div class="menubar">
